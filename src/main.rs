@@ -6,6 +6,22 @@ fn main() {
     println!("s was '{}', and without vowels is '{}'.", s, s_disemvowel);
 }
 
+fn disemvowel(string:&str) -> String {
+    // Vector of vowels and mutable empty string
+    let vowels = vec!['a','e','i','o','u','A','E','I','O','U'];
+    let mut new_word = String::from("");
+
+    // Iterates over every character in string. If character is not in the vowel vector,
+    // push that character to the empty string
+    for letter in string.chars(){ 
+        if !vowels.contains(&letter) {
+            new_word.push(letter);
+        }
+    }
+    //Return new string
+    new_word
+}
+
 // Everything from here down is Rust test code. You shouldn't need to 
 // change any of this. 
 //
